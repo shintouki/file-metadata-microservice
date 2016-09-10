@@ -8,10 +8,8 @@ var upload = multer().single('uploaded-file');
 
 var port = process.env.PORT || 8080;
 
-
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-  
+  res.sendFile(__dirname + '/index.html');  
 });
 
 app.post('/filesize', function(req, res) {
@@ -21,10 +19,8 @@ app.post('/filesize', function(req, res) {
         console.log(fileSize);
         res.send( {filesize: fileSize} );
     });
-    
 });
 
 app.listen(port, function () {
   console.log('App is running on port ' + port);
 });
-
